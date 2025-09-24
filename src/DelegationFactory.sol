@@ -19,7 +19,7 @@ contract DelegationFactory is Level {
         return address(parity);
     }
 
-    function validateInstance(address payable _instance, address _player) public override returns (bool) {
+    function validateInstance(address payable _instance, address _player) public view override returns (bool) {
         Delegation parity = Delegation(_instance);
         return parity.owner() == _player;
     }
